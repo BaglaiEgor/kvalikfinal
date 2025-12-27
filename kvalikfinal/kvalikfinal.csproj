@@ -1,0 +1,57 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+    <AvaloniaUseCompiledBindingsByDefault>false</AvaloniaUseCompiledBindingsByDefault>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Avalonia" Version="11.3.9" />
+    <PackageReference Include="Avalonia.Controls.DataGrid" Version="11.3.9" />
+    <PackageReference Include="Avalonia.Desktop" Version="11.3.9" />
+    <PackageReference Include="Avalonia.Themes.Fluent" Version="11.3.9" />
+    <PackageReference Include="Avalonia.Fonts.Inter" Version="11.3.9" />
+    <!--Condition below is needed to remove Avalonia.Diagnostics package from build output in Release configuration.-->
+    <PackageReference Include="Avalonia.Diagnostics" Version="11.3.9">
+      <IncludeAssets Condition="'$(Configuration)' != 'Debug'">None</IncludeAssets>
+      <PrivateAssets Condition="'$(Configuration)' != 'Debug'">All</PrivateAssets>
+    </PackageReference>
+    <PackageReference Include="MessageBox.Avalonia" Version="3.2.0" />
+    <PackageReference Include="MessageBox.Avalonia.Markdown" Version="3.2.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="8.0.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="8.0.0">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="8.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Views\DeliveryEditDialog.axaml.cs">
+      <DependentUpon>DeliveryEditDialog.axaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\DeliveryItemsDialog.axaml.cs">
+      <DependentUpon>DeliveryItemsDialog.axaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\DeliveriesView.axaml.cs">
+      <DependentUpon>DeliveriesView.axaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\SupplierEditDialog.axaml.cs">
+      <DependentUpon>SupplierEditDialog.axaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\SuppliersView.axaml.cs">
+      <DependentUpon>SuppliersView.axaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\ZoneEditDialog.axaml.cs">
+      <DependentUpon>ZoneEditDialog.axaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\WarehouseEditDialog.axaml.cs">
+      <DependentUpon>WarehouseEditDialog.axaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\ProductsView.axaml.cs">
+      <DependentUpon>ProductsView.axaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+</Project>

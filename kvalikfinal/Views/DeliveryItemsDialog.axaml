@@ -1,0 +1,41 @@
+<Window xmlns="https://github.com/avaloniaui" 
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+        x:Class="kvalikfinal.Views.DeliveryItemsDialog" 
+        Width="650" Height="450" 
+        WindowStartupLocation="CenterOwner" 
+        Title="Delivery Items" Background="#F5F6F8" 
+        FontFamily="Roboto">
+
+<StackPanel Margin="20" Spacing="12">
+
+    <StackPanel Orientation="Horizontal" Spacing="10">
+        <ComboBox x:Name="ProductCombo" Width="250">
+            <ComboBox.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock Text="{Binding Name}" Foreground="#1F1F1F"/>
+                </DataTemplate>
+            </ComboBox.ItemTemplate>
+        </ComboBox>
+        <TextBox x:Name="QtyBox" Width="80" Watermark="Qty" Foreground="#1F1F1F"/>
+        <TextBox x:Name="PriceBox" Width="80" Watermark="Price" Foreground="#1F1F1F"/>
+        <Button Content="Add" Width="80" Background="#2F80ED" Foreground="#FFFFFF" Click="Add_Click"/>
+    </StackPanel>
+
+    <DataGrid x:Name="ItemsGrid" AutoGenerateColumns="False" Height="320" FontSize="13" Foreground="#1F1F1F">
+        <DataGrid.Columns>
+            <DataGridTextColumn Header="Product" Binding="{Binding Product.Name}" Width="*"/>
+            <DataGridTextColumn Header="Quantity" Binding="{Binding Quantity}" Width="100"/>
+            <DataGridTextColumn Header="Price" Binding="{Binding PurchasePrice}" Width="100"/>
+            <DataGridTemplateColumn Header="Actions" Width="100">
+                <DataGridTemplateColumn.CellTemplate>
+                    <DataTemplate>
+                        <Button Content="Delete" Width="60" Background="#FF4D4F" Foreground="#FFFFFF" Tag="{Binding}" Click="Delete_Click"/>
+                    </DataTemplate>
+                </DataGridTemplateColumn.CellTemplate>
+            </DataGridTemplateColumn>
+        </DataGrid.Columns>
+    </DataGrid>
+
+</StackPanel>
+
+</Window>

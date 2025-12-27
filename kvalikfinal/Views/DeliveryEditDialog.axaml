@@ -1,0 +1,42 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        x:Class="kvalikfinal.Views.DeliveryEditDialog"
+        Width="420" Height="350" 
+        WindowStartupLocation="CenterOwner" 
+        Title="Delivery" Background="#F5F6F8" 
+        FontFamily="Roboto">
+
+<StackPanel Margin="20" Spacing="10">
+    <TextBlock Text="Edit Delivery" FontSize="20" Foreground="#1F1F1F"/>
+
+    <TextBlock Text="Supplier *" Foreground="#1F1F1F"/>
+    <ComboBox x:Name="SupplierCombo" Width="300">
+        <ComboBox.ItemTemplate>
+            <DataTemplate>
+                <TextBlock Text="{Binding Name}" Foreground="#1F1F1F"/>
+            </DataTemplate>
+        </ComboBox.ItemTemplate>
+    </ComboBox>
+
+    <TextBlock Text="Warehouse *" Foreground="#1F1F1F"/>
+    <ComboBox x:Name="WarehouseCombo" Width="300">
+        <ComboBox.ItemTemplate>
+            <DataTemplate>
+                <TextBlock Text="{Binding Name}" Foreground="#1F1F1F"/>
+            </DataTemplate>
+        </ComboBox.ItemTemplate>
+    </ComboBox>
+
+    <TextBlock Text="Date *" Foreground="#1F1F1F"/>
+    <DatePicker x:Name="DeliveryDate" Width="300"/>
+
+    <TextBlock Text="Status" Foreground="#1F1F1F"/>
+    <TextBox x:Name="StatusBox" Width="300"/>
+
+    <StackPanel Orientation="Horizontal" Spacing="12" HorizontalAlignment="Right" Margin="0,10,0,0">
+        <Button Content="Save" Width="80" Background="#2F80ED" Foreground="#FFFFFF" Click="Save_Click"/>
+        <Button Content="Cancel" Width="80" Background="#CCCCCC" Foreground="#1F1F1F" Click="Cancel_Click"/>
+    </StackPanel>
+</StackPanel>
+
+</Window>

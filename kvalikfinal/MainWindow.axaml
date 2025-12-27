@@ -1,0 +1,48 @@
+<Window xmlns="https://github.com/avaloniaui" 
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+        x:Class="kvalikfinal.MainWindow" 
+        Title="kvalikfinal" 
+        Width="1000" Height="600" 
+        Background="#F5F6F8" FontFamily="Roboto">
+
+<DockPanel>
+    <StackPanel DockPanel.Dock="Left"
+                Width="200"
+                Background="#F5F6F8"
+                Spacing="10"
+                Margin="0,20,0,20">
+
+        <Button x:Name="ProductsButton"
+                Content="Products"
+                HorizontalAlignment="Stretch"
+                Background="Transparent"
+                Foreground="#1F1F1F"
+                FontSize="14"
+                Click="btnProducts_Click"/>
+        <Button x:Name="SuppliersButton"
+                Content="Suppliers"
+                HorizontalAlignment="Stretch"
+                Background="Transparent"
+                Foreground="#1F1F1F"
+                FontSize="14"
+                Click="btnSuppliers_Click"/>
+        <Button x:Name="WarehousesButton"
+                Content="Warehouses"
+                HorizontalAlignment="Stretch"
+                Background="Transparent"
+                Foreground="#1F1F1F"
+                FontSize="14"
+                Click="btnWarehouses_Click"/>
+        <Button x:Name="DeliveriesButton"
+                Content="Deliveries"
+                HorizontalAlignment="Stretch"
+                Background="Transparent"
+                Foreground="#1F1F1F"
+                FontSize="14"
+                Click="btnDelivers_Click"/>
+    </StackPanel>
+
+    <ContentControl x:Name="mainControl" Margin="20"/>
+</DockPanel>
+
+</Window>

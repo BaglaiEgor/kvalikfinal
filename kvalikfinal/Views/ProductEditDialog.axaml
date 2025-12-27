@@ -1,0 +1,37 @@
+<Window xmlns="https://github.com/avaloniaui" 
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        x:Class="kvalikfinal.Views.ProductEditDialog" 
+        Width="400" Height="450" 
+        Title="Edit Product" 
+        WindowStartupLocation="CenterScreen" 
+        Background="#F5F6F8" FontFamily="Roboto">
+
+<StackPanel Margin="20" Spacing="10">
+    <TextBlock Text="Name:" FontSize="14" Foreground="#1F1F1F"/>
+    <TextBox x:Name="NameTextBox" Width="300" Foreground="#1F1F1F"/>
+
+    <TextBlock Text="Category:" FontSize="14" Foreground="#1F1F1F"/>
+    <ComboBox x:Name="CategoryComboBox" Width="300">
+        <ComboBox.ItemTemplate>
+            <DataTemplate>
+                <TextBlock Text="{Binding Name}" Foreground="#1F1F1F"/>
+            </DataTemplate>
+        </ComboBox.ItemTemplate>
+    </ComboBox>
+
+    <TextBlock Text="Unit:" FontSize="14" Foreground="#1F1F1F"/>
+    <TextBox x:Name="UnitTextBox" Width="300" Foreground="#1F1F1F"/>
+
+    <TextBlock Text="Min Stock:" FontSize="14" Foreground="#1F1F1F"/>
+    <NumericUpDown x:Name="MinStockBox" Width="120" Minimum="0" Maximum="100000" Foreground="#1F1F1F"/>
+
+    <TextBlock Text="Article:" FontSize="14" Foreground="#1F1F1F"/>
+    <TextBox x:Name="ArticleTextBox" Width="300" Foreground="#1F1F1F"/>
+
+    <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Spacing="10" Margin="0,20,0,0">
+        <Button Content="Save" Width="80" Background="#2F80ED" Foreground="#FFFFFF" Click="SaveButton_Click"/>
+        <Button Content="Cancel" Width="80" Background="#CCCCCC" Foreground="#1F1F1F" Click="CancelButton_Click"/>
+    </StackPanel>
+</StackPanel>
+
+</Window>

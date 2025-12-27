@@ -1,0 +1,44 @@
+<UserControl xmlns="https://github.com/avaloniaui" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+             x:Class="kvalikfinal.Views.DeliveriesView" 
+             Background="#F5F6F8" FontFamily="Roboto">
+
+<StackPanel Margin="20" Spacing="10">
+    <TextBlock Text="Deliveries" FontSize="20" Foreground="#1F1F1F"/>
+
+    <StackPanel Orientation="Horizontal" Spacing="10" Margin="0,0,0,10">
+        <ComboBox x:Name="SupplierFilter" Width="250" SelectionChanged="SupplierFilter_SelectionChanged">
+            <ComboBox.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock Text="{Binding Name}" Foreground="#1F1F1F"/>
+                </DataTemplate>
+            </ComboBox.ItemTemplate>
+        </ComboBox>
+        <DatePicker x:Name="DateFilter" Width="300" SelectedDateChanged="DateFilter_SelectedDateChanged"/>
+        <Button Content="Reset" Width="80" Background="#2F80ED" Foreground="#FFFFFF" Click="ResetFiltersButton_Click"/>
+    </StackPanel>
+
+    <Button Content="New Delivery" Width="150" Background="#2F80ED" Foreground="#FFFFFF" Click="AddDeliveryButton_Click"/>
+
+    <DataGrid x:Name="DeliveriesGrid" AutoGenerateColumns="False" Height="400" FontSize="13" Foreground="#1F1F1F">
+        <DataGrid.Columns>
+            <DataGridTextColumn Header="Date" Binding="{Binding DeliveryDate}" Width="200"/>
+            <DataGridTextColumn Header="Supplier" Binding="{Binding Supplier.Name}" Width="250"/>
+            <DataGridTextColumn Header="Warehouse" Binding="{Binding Warehouse.Name}" Width="250"/>
+            <DataGridTextColumn Header="Status" Binding="{Binding Status}" Width="150"/>
+            <DataGridTemplateColumn Header="Actions" Width="200">
+                <DataGridTemplateColumn.CellTemplate>
+                    <DataTemplate>
+                        <StackPanel Orientation="Horizontal" Spacing="6">
+                            <Button Content="Edit" Tag="{Binding}" Width="50" Background="#2F80ED" Foreground="#FFFFFF" Click="EditDeliveryButton_Click"/>
+                            <Button Content="Delete" Tag="{Binding}" Width="60" Background="#FF4D4F" Foreground="#FFFFFF" Click="DeleteDeliveryButton_Click"/>
+                            <Button Content="Items" Tag="{Binding}" Width="50" Background="#2F80ED" Foreground="#FFFFFF" Click="ViewItemsButton_Click"/>
+                        </StackPanel>
+                    </DataTemplate>
+                </DataGridTemplateColumn.CellTemplate>
+            </DataGridTemplateColumn>
+        </DataGrid.Columns>
+    </DataGrid>
+</StackPanel>
+
+</UserControl>

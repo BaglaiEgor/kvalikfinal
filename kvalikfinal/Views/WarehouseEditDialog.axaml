@@ -1,0 +1,31 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        x:Class="kvalikfinal.Views.WarehouseEditDialog"
+        Width="400" Height="250"
+        Title="Edit Warehouse"
+        WindowStartupLocation="CenterScreen"
+        Background="#F5F6F8"
+        FontFamily="Roboto"
+        Foreground="#1F1F1F">
+
+    <StackPanel Margin="20" Spacing="10">
+        <TextBlock Text="Name:" FontSize="14"/>
+        <TextBox x:Name="NameTextBox" FontSize="14"/>
+
+        <TextBlock Text="Address:" FontSize="14"/>
+        <TextBox x:Name="AddressTextBox" FontSize="14"/>
+
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Spacing="10" Margin="0,20,0,0">
+            <Button Content="Save"
+                    FontSize="14"
+                    Background="#2F80ED"
+                    Foreground="#FFFFFF"
+                    Click="SaveButton_Click"/>
+            <Button Content="Cancel"
+                    FontSize="14"
+                    Background="#2F80ED"
+                    Foreground="#FFFFFF"
+                    Click="CancelButton_Click"/>
+        </StackPanel>
+    </StackPanel>
+</Window>
